@@ -1,5 +1,5 @@
-export const environment = import.meta.env.VITE_ENVIRONMENT;
-
-export function debugging() {
-	throw new Error("Function not implemented.");
-}
+import * as config from "./config.ts";
+const _debugging = true;
+export const environment = () => import.meta.env.VITE_ENVIRONMENT;
+export const debugging = () =>
+	config.environment() === "development" && _debugging;

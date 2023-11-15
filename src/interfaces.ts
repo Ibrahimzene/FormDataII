@@ -1,3 +1,19 @@
+export interface IFormField {
+    label: string;
+    value: string;
+    isRequired: boolean;
+    isValid: boolean;
+}
+export interface IFormFields {
+    firstName: IFormField;
+    lastName: IFormField;
+    age: IFormField;
+}
+export interface IFormInfo {
+    status: "active" | "sending" | "error";
+    message: string;
+    fields: IFormFields;
+}
 export interface IFrontendEmployee {
 	firstName: string;
 	lastName: string;
